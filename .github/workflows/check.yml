@@ -5,11 +5,14 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - 
+        name: Checkout
         uses: actions/checkout@v7
-      - name: Install deps
+      - 
+        name: Install deps
         run: npm ci
-      - name: Lint
+      - 
+        name: Lint
         run: npm run lint
 
   test:
@@ -19,19 +22,24 @@ jobs:
         version: [14, 16, 18]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - 
+        name: Checkout
         uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - 
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.version }}
-      - name: Install deps
+      - 
+        name: Install deps
         run: npm ci
-      - name: Test
+      - 
+        name: Test
         run: npm run test
 
   secret:
     runs-on: ubuntu-latest
     steps:
-    - name: Print secret
+    - 
+      name: Print secret
       run: echo ${{ secrets.TEST }}
     
